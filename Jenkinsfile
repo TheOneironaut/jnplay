@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Hello Jenkins') {
             steps {
-                echo 'Hello, World!'
+                echo 'Hello, World from Jenkins!'
+            }
+        }
+        
+        stage('Hello Docker') {
+            steps {
+                sh 'docker run --rm hello-world'
             }
         }
     }
